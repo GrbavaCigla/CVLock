@@ -9,7 +9,7 @@ picfolder=join(mainfolder, sys.argv[1])
 threshold = 0.7
 tickness=2
 
-face_cascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
+face_cascade = cv2.CascadeClassifier("/usr/local/CVLock/haarcascade_frontalface_default.xml")
 files = [join(picfolder,f) for f in listdir(picfolder) if isfile(join(picfolder, f))]
 
 cap = cv2.VideoCapture(0)

@@ -22,7 +22,6 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
   char command[1024];
   strcpy(command, "python3.6 /usr/local/CVLock/checkdynamic.py ");
   strcat(command, username);
-  printf("%s", command);
   if (!system(command)) return PAM_SUCCESS;
   else return PAM_AUTH_ERR;
 }
