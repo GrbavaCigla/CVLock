@@ -2,9 +2,10 @@ import cv2
 import numpy as np
 from os import listdir
 from os.path import isfile, join
+import sys;
 
-mainfolder="MYFOLDER"
-picfolder=join(mainfolder,"IMAGE_FOLDER")
+mainfolder="/usr/local/CVLock/"
+picfolder=join(mainfolder, sys.argv[1])
 threshold = 0.7
 tickness=2
 
