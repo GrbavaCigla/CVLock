@@ -23,8 +23,9 @@ while 1:
         for template in templates:
 
                 for (x,y,w,h) in faces:
-                        res = cv2.matchTemplate(gray,template,cv2.TM_CCOEFF_NORMED)
+                        res = cv2.matchTemplate(gray[y:y+h,x:x+w],template,cv2.TM_CCOEFF_NORMED)
                         loc = np.where( res >= threshold)
+
 
                         for pt in zip(*loc[::-1]):
                                 #LOCK PART
