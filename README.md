@@ -34,7 +34,7 @@ Run `templatemaker.py` without `[]`:
 ```
 sudo python3 templatemaker.py [name]
 ```
-To make sample click `c` on keyboard. Make about 40 samples.
+To make sample click `c` on keyboard. Make about 100 samples.
 ## Credits
 Made by [proalexa](https://github.com/proalexa/) and [hwrnr](https://github.com/hwrnr/)<br />
 Thanks for cv2 by Intel
