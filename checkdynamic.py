@@ -14,7 +14,7 @@ files = [join(picfolder,f) for f in listdir(picfolder) if isfile(join(picfolder,
 
 cap = cv2.VideoCapture(0)
 
-templates=[cv2.imread(i) for i in files]
+templates=[cv2.cvtColor(cv2.imread(i), cv2.COLOR_BGR2GRAY) for i in files]
 
 while 1:
         ret, img = cap.read()
@@ -23,10 +23,7 @@ while 1:
         for template in templates:
 
                 for (x,y,w,h) in faces:
-                        roi_gray = gray[y:y+h, x:x+w]
-                        timg = template
-                        timg = cv2.cvtColor(timg, cv2.COLOR_BGR2GRAY)
-                        res = cv2.matchTemplate(gray,timg,cv2.TM_CCOEFF_NORMED)
+                        res = cv2.matchTemplate(gray,template,cv2.TM_CCOEFF_NORMED)
                         loc = np.where( res >= threshold)
 
                         for pt in zip(*loc[::-1]):
