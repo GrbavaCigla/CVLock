@@ -10,6 +10,7 @@ _CVLock is face recognition authentication for Linux and MacOS Systems. CVLock u
 
 ## Installation
 #### Requirement
+_CVLock is available only on python3_
 ```
 pip3 install opencv-python
 pip3 install numpy
