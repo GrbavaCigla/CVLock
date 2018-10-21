@@ -31,8 +31,7 @@ while 1:
                                 print("OK")
                                 quit(0)
                                 break
-                                #LOCK PART	
-        cv2.imshow("frame", img)
+                                #LOCK PART
         if cv2.waitKey(1) & 0xFF == ord('q'):
                 quit(54)
 cap.release()
