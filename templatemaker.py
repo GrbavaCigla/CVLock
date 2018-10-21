@@ -22,7 +22,8 @@ while True:
     if cv2.waitKey(1) & 0xFF == ord('c'):
         gf+=1
         print("Blah")
-        cv2.imwrite(("/usr/local/CVLock/" + sys.argv[1] + "/crop{}.jpg").format(gf),roi_color)
+        graySample = cv2.cvtColor(roi_color, cv2.COLOR_BGR2GRAY)
+        cv2.imwrite(("/usr/local/CVLock/" + sys.argv[1] + "/crop{}.jpg").format(gf),graySample)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 cap.release()

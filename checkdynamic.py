@@ -13,15 +13,18 @@ face_cascade = cv2.CascadeClassifier("/usr/local/CVLock/haarcascade_frontalface_
 files = [join(picfolder,f) for f in listdir(picfolder) if isfile(join(picfolder, f))]
 
 cap = cv2.VideoCapture(0)
+
+templates=[cv2.imread(i) for i in files]
+
 while 1:
-        for template in files:
-                ret, img = cap.read()
-                gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-                faces = face_cascade.detectMultiScale(gray, 1.3, 5)
+        ret, img = cap.read()
+        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        faces = face_cascade.detectMultiScale(gray, 1.3, 5)
+        for template in templates:
 
                 for (x,y,w,h) in faces:
                         roi_gray = gray[y:y+h, x:x+w]
-                        timg = cv2.imread(template)
+                        timg = template
                         timg = cv2.cvtColor(timg, cv2.COLOR_BGR2GRAY)
                         res = cv2.matchTemplate(gray,timg,cv2.TM_CCOEFF_NORMED)
                         loc = np.where( res >= threshold)
@@ -32,6 +35,7 @@ while 1:
                                 quit(0)
                                 break
                                 #LOCK PART	
+        cv2.imshow("frame", img)
         if cv2.waitKey(1) & 0xFF == ord('q'):
                 quit(54)
 cap.release()
