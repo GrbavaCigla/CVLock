@@ -1,6 +1,6 @@
 # CVLock
 ## Description
-_CVLock is face recognition authentication for Linux and MacOS Systems. CVLock uses intel's cv2 for recognition._
+_CVLock is face recognition authentication for Linux and MacOS Systems. CVLock uses intel's cv2 for face recognition._
 
 
 ## Disclaimer
