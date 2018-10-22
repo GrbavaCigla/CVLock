@@ -34,7 +34,7 @@ Run `templatemaker.py` without `[]`:
 ```
 sudo python3 templatemaker.py [name]
 ```
-**_Note:this should be your username (example:root)_**
+**_Note:this should be your username (example:root)_**\
 To make sample click `c` on keyboard. Make about X samples.
 ## Credits
 Made by [proalexa](https://github.com/proalexa/) and [hwrnr](https://github.com/hwrnr/)<br />
