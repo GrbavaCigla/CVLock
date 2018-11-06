@@ -1,3 +1,4 @@
+#! /bin/env python3
 import cv2
 import numpy as np
 from os import listdir
