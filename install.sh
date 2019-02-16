@@ -3,6 +3,6 @@ cp checkdynamic.py /usr/local/CVLock/;
 chmod +x /usr/local/CVLock/checkdynamic.py 
 cp haarcascade_frontalface_default.xml /usr/local/CVLock/;
 cd pam_module;
-./install.sh
+./install.sh 2> /dev/null
 cd ..;
 echo Done installing;
