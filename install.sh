@@ -1,2 +1,2 @@
-gsettings set org.gnome.login-screen enable-fingerprint-authentication false
+gsettings set org.gnome.login-screen enable-fingerprint-authentication true
 sudo ./installsudo.sh
