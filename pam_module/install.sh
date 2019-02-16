@@ -6,3 +6,4 @@ echo 'ps aux | grep checkdynamic.py | awk '{print $2}' | xargs kill; exit 0' >> 
 chmod +x /etc/gdm/PostLogin/Default 2> /dev/null
 echo 'ps aux | grep checkdynamic.py | awk '{print $2}' | xargs kill; exit 0' >> /etc/gdm3/PostLogin/Default 2> /dev/null
 chmod +x /etc/gdm3/PostLogin/Default 2> /dev/null
+sudo -u gdm gsettings set org.gnome.login-screen enable-fingerprint-authentication true
