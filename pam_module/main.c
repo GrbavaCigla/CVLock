@@ -18,10 +18,11 @@ PAM_EXTERN int pam_sm_acct_mgmt(pam_handle_t *pamh, int flags, int argc, const c
 PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, const char **argv ) {
   const char* username;
   pam_get_user(pamh, &username, NULL);
-  // printf("%s", username);
+  system("echo Smile \\(or press ctrl-c for next authentication method\\)");
   char command[1024];
   strcpy(command, "/usr/local/CVLock/checkdynamic.py ");
   strcat(command, username);
+  strcat(command, " &>>/dev/null");
   if (!system(command)) return PAM_SUCCESS;
   else return PAM_AUTH_ERR;
 }
