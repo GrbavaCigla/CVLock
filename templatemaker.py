@@ -1,7 +1,8 @@
 #!/usr/bin/env python3 
 import cv2
 import numpy as np
-import sys, os;
+import sys, os
+
 cap = cv2.VideoCapture(0)
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 gf=0
